@@ -1,0 +1,15 @@
+@import "./loading";
+@import "./button";
+@import "./input";
+@import "./alert";
+
+/* Item price
+________________________________ */
+
+.item-price {
+  display: flex;
+  align-items: center;
+}
+.item-price b {
+  font-size: 1.75rem;
+}

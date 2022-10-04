@@ -1,0 +1,54 @@
+/* overrrides plugin
+______________________________________*/
+
+.Toastify__toast-container {
+  z-index: 1043;
+}
+.Toastify__toast-container--top-right {
+  top: 7rem
+}
+.Toastify__toast {
+  box-shadow: none;
+  font-family: inherit;
+  font-weight: 700;
+  padding: .25rem .5rem;
+  cursor: default;
+  min-height: 3.75rem;
+  // padding-bottom: .5rem;
+  // padding-top: .5rem;
+}
+
+// .Toastify__close-button {
+//   display: none;
+// }
+
+.Toastify__toas t-icon  {
+  display: none;
+}
+.Toastify__toast--error {
+  background-color: red;
+}
+
+.Toastify__toast--success {
+  background-color: green;
+}
+
+
+.toast-c-container {
+  display: flex;
+  align-items: center;
+}
+
+.toast-c-container > svg {
+  margin-right: .75rem;
+}
+
+.Toastify__toast-icon {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .Toastify__toast-container--top-right {
+    top: 5.7rem
+  }
+}

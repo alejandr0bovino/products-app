@@ -1,0 +1,42 @@
+.theme-checkout__quantity {
+  margin-bottom: 1rem;
+  .badge {
+    font-size: 0.9rem;
+  }
+}
+
+.theme-checkout__total__inner {
+  font-size: 1.25rem;
+  strong {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.theme-checkout__title {
+  display: flex;
+  justify-content: space-between;
+  .badge {
+    font-size: 0.65em;
+    min-width: 2rem;
+    line-height: 1.1;
+  }
+}
+.theme-checkout__item {
+  justify-content: space-between;
+  display: flex;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background-color: var(--color-page-background);
+
+  h6 {
+    font-weight: 600;
+  }
+}
+
+.theme-checkout-form {
+  label {
+    font-weight: 600;
+  }
+}

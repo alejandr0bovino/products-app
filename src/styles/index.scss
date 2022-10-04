@@ -1,0 +1,89 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "./_vars.scss";
+@import "./bootstrap-overrides.scss";
+@import "./elements/_base.scss";
+@import "./modules/_base.scss";
+@import "./components/_base.scss";
+@import "./media-queries.scss";
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  color: var(--color-text);
+}
+a:hover {
+  color: var(--color-text);
+}
+
+/*
+________________________________ */
+
+.theme-main {
+  min-height: 37.5rem;
+  padding-top: 8.7rem;
+  padding-bottom: 3.25rem;
+
+  @media (max-width: 575px) {
+    min-height: 27.5rem;
+    padding-top: 6.5rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.theme-main-title {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.theme-main-title-2 {
+  margin-bottom: 1.5rem;
+}
+
+.theme-main-title-aligned {
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  margin-top: 11rem;
+
+  @media (max-width: 575px) {
+    margin-top: 9rem;
+  }
+}
+
+/*
+________________________________ */
+
+.theme-thank-you {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9rem;
+}
+
+@media (max-width: 767px) {
+  *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .theme-thank-you {
+    margin-top: 7rem;
+  }
+  .theme-thank-you--2 {
+    margin-top: 2rem;
+  }
+}

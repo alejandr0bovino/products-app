@@ -1,0 +1,25 @@
+$nav-height: 91px;
+$border-radius-1: 0.25rem;
+$border-radius-2: 1rem;
+
+$color-white: #fff;
+$color-google-red: #ea4335;
+$color-1: #455775;
+$color-1-darken: darken($color-1, 20);
+$color-1-lighten: lighten($color-1, 40);
+
+$color-black: #202124;
+$color-light-grey: #e8eaed;
+$color-light-grey-darken: darken($color-light-grey, 40);
+
+:root {
+  --color-page-background: #fff;
+  --color-text: #{$color-1};
+  --color-text-lighten: #{$color-1-lighten};
+}
+
+.dark {
+  --color-page-background: #{$color-black};
+  --color-text: #{$color-light-grey};
+  --color-text-lighten: #{$color-light-grey-darken};
+}

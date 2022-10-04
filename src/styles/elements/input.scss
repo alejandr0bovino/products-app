@@ -1,0 +1,73 @@
+.form-select {
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+  border-color: var(--color-text-lighten);
+
+  &:focus {
+    color: inherit;
+    border-color: var(--color-text);
+    box-shadow: 0 0 0 0.25rem rgba($color-1, 0.25);
+  }
+  .dark &:focus {
+    box-shadow: 0 0 0 0.25rem rgba($color-light-grey, 0.25);
+  }
+  .dark &,
+  .dark &.is-invalid:not([multiple]):not([size]) {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27gray%27 stroke=%27%gray%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M2 5l6 6 6-6%27/%3e%3c/svg%3e");
+  }
+}
+
+/*
+_______________________________________________*/
+
+.form-control {
+  color: inherit;
+  border-color: var(--color-text-lighten);
+  background-color: var(--color-page-background);
+
+  &::placeholder {
+    color: var(--color-text);
+  }
+
+  &:focus {
+    color: inherit;
+    border-color: var(--color-text-lighten);
+    background-color: var(--color-page-background);
+    box-shadow: 0 0 0 0.25rem rgba($color-1, 0.25);
+  }
+
+  &.is-invalid + label {
+    color: #dc3545;
+  }
+}
+
+.dark .form-control {
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba($color-light-grey, 0.25);
+  }
+}
+.dark {
+  .form-select.is-invalid:focus,
+  .form-control.is-invalid:focus,
+  .was-validated .form-control:invalid:focus {
+    box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
+  }
+}
+
+.form-control:disabled {
+  opacity: 0.5;
+  background-color: transparent;
+
+  + label {
+    opacity: 0.5;
+  }
+}
+
+.dark {
+  .form-floating > .form-control:-webkit-autofill ~ label {
+    color: var(--color-text-lighten);
+  }
+  .form-floating > .form-control:disabled:-webkit-autofill ~ label {
+    color: var(--color-text);
+  }
+}

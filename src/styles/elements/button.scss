@@ -1,0 +1,120 @@
+.btn--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn.has-icon {
+  position: relative;
+  svg {
+    position: absolute;
+    left: 1rem;
+  }
+}
+
+/*
+________________________________________________________*/
+
+.btn-gamma {
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-page-background);
+
+  &.mh {
+    min-height: 56px;
+  }
+}
+
+.btn-gamma:hover {
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-page-background);
+}
+.btn-gamma--lg {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/*
+________________________________________________________*/
+
+.btn-beta {
+  background-color: transparent;
+  border: none;
+  color: var(--color-text);
+  padding: 0;
+}
+
+.btn-beta:hover {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+/*
+________________________________________________________*/
+
+.btn-epsilon {
+  background-color: transparent;
+  border: none;
+  color: $color-white;
+  padding: 0;
+}
+
+.btn-epsilon:hover {
+  background-color: transparent;
+  color: $color-white;
+}
+
+/*
+________________________________________________________*/
+
+.btn-lambda {
+  padding: 0;
+}
+
+/*
+________________________________________________________*/
+
+.btn-delta {
+  background-color: $color-google-red;
+  border-color: $color-google-red;
+  color: $color-white;
+}
+
+.btn-delta:hover {
+  background-color: lighten($color-google-red, 5);
+  border-color: lighten($color-google-red, 5);
+  color: $color-white;
+}
+.btn-delta:focus {
+  box-shadow: 0 0 0 0.25rem rgba($color-google-red, 0.25);
+}
+.btn-delta--lg {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/*
+________________________________________________________*/
+
+.btn-omega {
+  background-color: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.btn-omega:hover {
+  background-color: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.btn-omega--lg {
+  padding: 0.75rem 3rem;
+  font-size: 1.25rem;
+}
+
+/*
+________________________________________________________*/

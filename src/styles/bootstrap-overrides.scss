@@ -1,0 +1,207 @@
+.btn {
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+}
+
+.navbar-light .navbar-nav .nav-link.disabled {
+  color: inherit;
+  opacity: 0.5;
+}
+
+a:focus-visible {
+  outline: none;
+}
+
+a:focus,
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba($color-1, 0.25);
+}
+
+.dark {
+  a:focus,
+  .btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba($color-light-grey-darken, 0.5);
+  }
+}
+
+.btn-warning {
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background-color: #ffc107;
+    border-color: #ffc107;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
+  }
+}
+.btn-danger {
+  &:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
+  }
+}
+.dark {
+  .btn-warning:focus {
+    box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
+  }
+  .btn-danger:focus {
+    box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
+  }
+}
+
+/*
+_______________________________________________*/
+
+hr {
+  background-color: var(--color-text-lighten);
+  color: var(--color-text-lighten);
+  opacity: 1;
+}
+
+/*
+_______________________________________________*/
+
+.btn-close {
+  filter: invert(54%) sepia(14%) saturate(961%) hue-rotate(187deg)
+    brightness(90%) contrast(91%);
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba($color-1, 0.25);
+  }
+}
+.dark .btn-close:focus {
+  box-shadow: 0 0 0 0.25rem rgba($color-light-grey-darken, 0.25);
+}
+
+/*
+_______________________________________________*/
+
+.text-muted {
+  color: var(--color-text-lighten) !important;
+}
+
+/*
+_______________________________________________*/
+
+.offcanvas {
+  background-color: var(--color-page-background);
+}
+.offcanvas-title {
+  display: flex;
+  align-items: center;
+}
+
+.offcanvas-end {
+  border-left: none;
+}
+.offcanvas-backdrop,
+.modal-backdrop {
+  background-color: lighten($color-1-darken, 5);
+
+  .dark & {
+    background-color: darken($color-black, 5);
+  }
+}
+.offcanvas-backdrop.show,
+.modal-backdrop.show {
+  opacity: 0.85;
+}
+.modal-header .btn-close,
+.offcanvas-header .btn-close {
+  opacity: 1;
+  filter: none;
+  color: var(--color-text-lighten);
+}
+
+.dark .offcanvas-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+.dark .modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/*
+_______________________________________________*/
+
+.alert {
+  border-color: transparent;
+  p {
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+  }
+}
+.alert-secondary a,
+.alert-secondary a:hover {
+  color: inherit;
+}
+/*
+_______________________________________________*/
+
+.tooltip.show {
+  opacity: 1;
+}
+.tooltip-inner {
+  max-width: 300px;
+  background-color: $color-1;
+  font-weight: 700;
+}
+
+.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before,
+.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: $color-1;
+}
+.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before,
+.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: $color-1;
+}
+.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before,
+.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: $color-1;
+}
+.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before,
+.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: $color-1;
+}
+
+.dark {
+  .tooltip-inner {
+    background-color: $color-white;
+    color: $color-black;
+  }
+
+  .bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before,
+  .bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: $color-white;
+  }
+  .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before,
+  .bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: $color-white;
+  }
+  .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before,
+  .bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: $color-white;
+  }
+  .bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before,
+  .bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: $color-white;
+  }
+}
+
+/*
+_______________________________________________*/
+
+.border-bottom {
+  border-color: var(--color-text-lighten) !important;
+}
+
+/*
+_______________________________________________*/
+
+.invalid-feedback {
+  display: block;
+}

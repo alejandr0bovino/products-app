@@ -1,0 +1,55 @@
+/* 
+Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... }
+ */
+
+@media (min-width: 400px) {
+  .myOrder__Container,
+  .myOrder__action {
+    width: 400px;
+    right: auto;
+    left: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .theme-products-list {
+    margin-top: auto;
+
+    > * {
+      margin-top: 0.75rem;
+    }
+
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  .theme-products-list__load-more {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .row {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+
+    > * {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.theme-loading__wrapper {
+  margin-top: 12rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 575px) {
+    margin-top: 9rem;
+  }
+}

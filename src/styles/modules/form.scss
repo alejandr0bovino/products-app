@@ -1,0 +1,27 @@
+.theme-form-1 {
+  .form-floating:focus-within {
+    z-index: 2;
+  }
+
+  input[type="email"] {
+    margin-bottom: -1px;
+  }
+}
+
+.theme-form-1__group-1 {
+  .form-control {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.theme-form-1__group-2 {
+  .form-control {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.form-floating > textarea.form-control {
+  height: 6rem;
+}

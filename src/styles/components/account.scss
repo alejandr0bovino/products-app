@@ -1,0 +1,48 @@
+.theme-account__picture {
+  border: 3px solid var(--color-text);
+  border-radius: 50%;
+  overflow: hidden;
+
+  width: 130px; /* 124px más 6 de borde */
+  height: 130px; /*  124px más 6 de borde */
+
+  > img {
+    width: 100%;
+  }
+  > svg {
+    width: 100%;
+  }
+}
+
+.theme-account__google a {
+  display: flex;
+  width: 2rem;
+  color: $color-google-red;
+
+  &:hover,
+  &:focus {
+    color: $color-google-red;
+  }
+}
+
+@media (max-width: 767px) {
+  .theme-account {
+    text-align: center;
+    .col-md-10 {
+      margin-top: 1rem;
+    }
+  }
+  .theme-account__picture {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .theme-account__action .btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .theme-account__google a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

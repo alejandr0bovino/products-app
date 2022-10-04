@@ -1,0 +1,32 @@
+.theme-home {
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-bottom: 3rem;
+  }
+}
+
+/* 
+_____________________________________*/
+@media (max-width: 575px) {
+  .theme-home .btn {
+    width: 100%;
+  }
+  .theme-home {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) {
+  .theme-home {
+    padding-top: 3.5rem;
+  }
+}

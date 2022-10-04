@@ -1,0 +1,45 @@
+.theme-responsive-menu__container {
+  padding: 1rem;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    > li {
+      &:not(:last-child) {
+        margin-bottom: 0.75rem;
+      }
+
+      > .btn {
+        color: var(--color-text);
+        text-align: left;
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        width: 100%;
+      }
+
+      .badge {
+        font-size: 0.825em;
+        top: 0;
+        margin-left: 0.5rem;
+      }
+      svg {
+        margin-right: 0.5rem;
+      }
+
+      img {
+        border-radius: 50%;
+        width: 1.5rem;
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--color-text-lighten);
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
