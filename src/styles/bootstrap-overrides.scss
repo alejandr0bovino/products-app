@@ -1,6 +1,8 @@
-.g-5,
-.gy-5 {
-  --bs-gutter-y: 1.5rem;
+@media (max-width: 767px) {
+  .g-5,
+  .gy-5 {
+    --bs-gutter-y: 1.5rem;
+  }
 }
 
 .btn {
