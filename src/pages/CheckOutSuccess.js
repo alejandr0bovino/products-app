@@ -57,7 +57,7 @@ function CheckOutSuccess() {
                 <div className="col">
                   <h3 className="theme-thank-you theme-thank-you--1">
                     <BsCheckCircleFill />
-                    &nbsp; Thank you
+                    <span>&nbsp; Thank you</span>
                   </h3>
                 </div>
               </div>
@@ -182,8 +182,6 @@ function CheckOutSuccess() {
                     <div className="col-md-9">{location.state.data.zip}</div>
                   </div>
                 </div>
-
-                <hr className="mb-4" />
 
                 <div>
                   <button
