@@ -68,7 +68,7 @@ function Account() {
       </Helmet>
 
       <div className="row gy-5 theme-account">
-        <div className="col-md-2">
+        <div className="col-md-3 col-lg-2">
           {user.photoURL ? (
             <>
               <div className="theme-account__picture">
@@ -82,7 +82,7 @@ function Account() {
           )}
         </div>
 
-        <div className="col-md-10">
+        <div className="col-md-9 col-lg-10">
           <h2 className="theme-main-title">Account</h2>
 
           {user.photoURL && (

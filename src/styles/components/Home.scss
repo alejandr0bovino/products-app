@@ -23,10 +23,13 @@ _____________________________________*/
     margin-bottom: 1rem;
   }
 }
-@media (max-width: 767px) {
+@media (min-width: 576px) {
+  .theme-home {
+    padding-top: 3rem;
+  }
 }
 @media (min-width: 768px) {
   .theme-home {
-    padding-top: 3.5rem;
+    padding-top: 5.5rem;
   }
 }
