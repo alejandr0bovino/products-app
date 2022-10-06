@@ -33,13 +33,14 @@ ________________________________ */
 
 .theme-main {
   min-height: 37.5rem;
-  padding-top: 8.7rem;
+  margin-top: $nav-height;
+  padding-top: 3.25rem;
   padding-bottom: 3.25rem;
 
   @media (max-width: 575px) {
     min-height: 27.5rem;
-    padding-top: 6.5rem;
-    padding-bottom: 0.8rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 }
 
