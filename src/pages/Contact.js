@@ -190,7 +190,7 @@ function Contact() {
             <span className="d-block">Montevideo, Uruguay </span>
           </div>
 
-          <div className="pb-3">
+          <div>
             &nbsp;
             <BiEnvelope size="1.75rem" />
             <span className="d-block">email@example.com </span>

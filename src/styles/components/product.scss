@@ -13,13 +13,17 @@ ________________________________ */
 .theme-product-detail__price {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+
   span {
     margin-top: 0.25rem;
   }
   b {
     font-size: 2rem;
     margin-left: 0.25rem;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 1.5rem;
   }
 }
 

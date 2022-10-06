@@ -128,20 +128,22 @@ function ProductDetail() {
                   {data.products.description}
                 </p>
 
-                <div className="mb-4">
-                  <Link
-                    to={`/category/${data.products.category.id}`}
-                    className="btn btn-warning"
-                  >
-                    {data.products.category.name}
-                  </Link>
-                </div>
+                <div className="row mb-4">
+                  <div className="col-6 col-md--12 order-last text-end text-md-start">
+                    <Link
+                      to={`/category/${data.products.category.id}`}
+                      className="btn btn-warning"
+                    >
+                      {data.products.category.name}
+                    </Link>
+                  </div>
 
-                <div className="theme-product-detail__price">
-                  <span>
-                    <HiCurrencyDollar size="2.25rem" />
-                  </span>
-                  <b>{data.products.price}</b>
+                  <div className="theme-product-detail__price col-6 col-md-12 order-md-last">
+                    <span>
+                      <HiCurrencyDollar size="2.25rem" />
+                    </span>
+                    <b>{data.products.price}</b>
+                  </div>
                 </div>
 
                 <div className="theme-product-detail__action">
