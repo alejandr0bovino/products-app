@@ -72,7 +72,10 @@ ________________________________ */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 9rem;
+}
+.theme-thank-you,
+.theme-thank-you--2 {
+  margin-top: 11rem;
 }
 
 @media (max-width: 767px) {
@@ -81,10 +84,21 @@ ________________________________ */
     box-shadow: none !important;
   }
 
-  .theme-thank-you {
-    margin-top: 7rem;
+  .theme-thank-you--1 {
+    margin-top: 11rem;
   }
   .theme-thank-you--2 {
-    margin-top: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
+}
+
+@media (max-width: 575px) {
+  .theme-thank-you--1 {
+    margin-top: 9rem;
+  }
+  // .theme-thank-you--2 {
+  //   margin-top: 4rem;
+  //   margin-bottom: 4rem;
+  // }
 }

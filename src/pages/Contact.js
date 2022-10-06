@@ -80,7 +80,7 @@ function Contact() {
           {showSuccessMsg ? (
             <h3 className="theme-thank-you theme-thank-you--2">
               <BsCheckCircleFill />
-              &nbsp; Thank you
+              <span>&nbsp; Thank you</span>
             </h3>
           ) : (
             <>
