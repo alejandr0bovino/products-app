@@ -174,7 +174,7 @@ function CheckOutSuccess() {
                   </div>
                 </div>
 
-                <div className="mb-4 pb-3">
+                <div className="mb-4">
                   <div className="row">
                     <div className="col-md-3 theme-table-1__label">
                       <strong>Zip:</strong>
