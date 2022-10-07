@@ -183,6 +183,8 @@ function CheckOutSuccess() {
                   </div>
                 </div>
 
+                <hr className="mb-4" />
+
                 <div>
                   <button
                     type="button"

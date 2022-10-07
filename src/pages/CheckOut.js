@@ -209,7 +209,7 @@ function CheckOut() {
                 </div>
 
                 <div className="row mb-4">
-                  <div className="col-md-5 mb-3">
+                  <div className="col-md-5 u-mb-3">
                     <label htmlFor="country" className="form-label">
                       Country
                     </label>
@@ -232,7 +232,7 @@ function CheckOut() {
                     </div>
                   </div>
 
-                  <div className="col-md-4 mb-3">
+                  <div className="col-md-4 u-mb-3">
                     <label htmlFor="state" className="form-label">
                       State
                     </label>

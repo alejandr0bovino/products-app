@@ -1,6 +1,7 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "./_vars.scss";
 @import "./bootstrap-overrides.scss";
+@import "./utils.scss";
 @import "./elements/_base.scss";
 @import "./modules/_base.scss";
 @import "./components/_base.scss";
@@ -97,8 +98,4 @@ ________________________________ */
   .theme-thank-you--1 {
     margin-top: 9rem;
   }
-  // .theme-thank-you--2 {
-  //   margin-top: 4rem;
-  //   margin-bottom: 4rem;
-  // }
 }
