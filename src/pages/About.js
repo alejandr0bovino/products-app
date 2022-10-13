@@ -1,16 +1,11 @@
 import React, { useEffect } from "react";
+import { MenuActive } from "../components/MenuActive"
 import { Helmet } from "react-helmet";
 
 function About() {
-  useEffect(() => {
-    const navItems = document.querySelectorAll(".nav-item");
-    navItems.forEach((box) => {
-      box.classList.remove("active-item");
-    });
-  }, []);
-
   return (
     <>
+      <MenuActive />
       <Helmet>
         <title>About - Products App</title>
       </Helmet>
