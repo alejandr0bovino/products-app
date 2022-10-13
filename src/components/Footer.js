@@ -40,7 +40,7 @@ function Footer() {
             </li>
 
             <li>
-              <a href="#" className="btn">
+              <a href="https://github.com/alejandr0bovino/products-app" className="btn" target="_blank">
                 <FiGithub size="1.25rem" />
               </a>
             </li>
