@@ -15,6 +15,7 @@ body {
   position: relative;
   background-color: var(--color-page-background);
   color: var(--color-text);
+  // overflow-y: scroll;
 }
 
 code {
@@ -33,14 +34,17 @@ a:hover {
 ________________________________ */
 
 .theme-main {
-  min-height: 37.5rem;
-  margin-top: $nav-height;
-  padding-top: 3.25rem;
+  // min-height: 37.5rem;
+  min-height: 40.75rem;
+  // margin-top: $nav-height;
+  // padding-top: 3.25rem;
+  padding-top: calc(91px + 3.25rem);
   padding-bottom: 3.25rem;
 
   @media (max-width: 575px) {
-    min-height: 27.5rem;
-    padding-top: 0.75rem;
+    // min-height: 27.5rem;
+    min-height: 28.25rem;
+    padding-top: calc(91px + 0.75rem);
     padding-bottom: 0.75rem;
   }
 }
@@ -62,7 +66,7 @@ ________________________________ */
   margin-top: 13rem;
 
   @media (max-width: 575px) {
-    margin-top: 11rem;
+    margin-top: 9rem;
   }
 }
 
@@ -73,17 +77,22 @@ ________________________________ */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0;
 }
-.theme-thank-you,
+// .theme-thank-you,
+// .theme-thank-you--2 {
+//   margin-top: 11rem;
+// }
+.theme-thank-you--1,
 .theme-thank-you--2 {
   margin-top: 11rem;
 }
 
 @media (max-width: 767px) {
-  *:focus {
-    outline: none !important;
-    box-shadow: none !important;
-  }
+  // *:focus {
+  //   outline: none !important;
+  //   box-shadow: none !important;
+  // }
 
   .theme-thank-you--1 {
     margin-top: 11rem;
@@ -96,6 +105,61 @@ ________________________________ */
 
 @media (max-width: 575px) {
   .theme-thank-you--1 {
-    margin-top: 9rem;
+    margin-top: 7rem;
   }
 }
+
+
+/*
+________________________________ */
+// 
+// .no-minheight-page .theme-main {
+  // min-height: auto;
+// }
+// 
+
+
+
+
+
+
+
+
+
+
+
+/*  C o l o u r    E x p e r i m e n t
+________________________________________________________*/
+
+// $light-alt-color: #f0f0f0;
+// $dark-alt-color: #11161d; 
+
+// html {
+//   background-color: $light-alt-color
+// }
+
+// .theme-header {
+//   .navbar {
+//     background-color: $light-alt-color
+//   }
+// }
+
+// .theme-footer {
+//   background-color: $light-alt-color
+// }
+
+// .dark {
+//   & {
+//     background-color:  $dark-alt-color;
+//   }
+
+//   .theme-header {
+//     .navbar {
+//       background-color: $dark-alt-color
+//     }
+//   }
+
+//   .theme-footer {
+//     background-color: $dark-alt-color
+//   }
+// }

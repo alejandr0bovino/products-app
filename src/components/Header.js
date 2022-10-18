@@ -145,6 +145,7 @@ function Header() {
               <Nav.Item>
                 <Button
                   className="nav-link d-none d-sm-flex"
+                  // className="nav-link"
                   variant=""
                   onClick={toggleTheme}
                   aria-label={

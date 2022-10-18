@@ -26,6 +26,7 @@ function CheckOutSuccess() {
     displayToastSuccessfullySentMsg();
     emptyCart();
     window.history.replaceState({}, document.title);
+    document.querySelector('#menu-cart .disabled').classList.remove('disabled')
   };
 
   useEffect(() => {

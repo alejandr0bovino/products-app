@@ -21,7 +21,7 @@ const FavsProductList = () => {
           ))}
         </div>
       ) : (
-        <div className="alert alert-secondary theme-alert" role="alert">
+        <div className="alert alert-secondary theme-alert mb-0" role="alert">
           <div>
             <MdWarningAmber size="1.6rem" />
           </div>

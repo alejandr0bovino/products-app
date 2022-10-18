@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
           <title>Protected route - Products App</title>
         </Helmet>
 
-        <div className="alert alert-secondary theme-alert" role="alert">
+        <div className="alert alert-secondary theme-alert mb-0" role="alert">
           <div>
             <MdWarningAmber size="1.6rem" />
           </div>

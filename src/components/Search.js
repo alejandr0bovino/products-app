@@ -55,7 +55,8 @@ function Search(props) {
       </Modal.Header>
 
       <Modal.Body
-        className={search !== "" ? "theme-search__modal-body-open" : ""}
+        // className={search !== "" ? "theme-search__modal-body-open" : ""}
+        className={(search !== "" && filteredProducts.length > 0) ? "theme-search__modal-body-open" : ""}
       >
         {search !== "" && filteredProducts
           ? filteredProducts.map((item) => (

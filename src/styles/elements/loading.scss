@@ -5,6 +5,13 @@
   align-items: center;
 
   @media (max-width: 575px) {
-    margin-top: 11.5rem;
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .spinner-grow {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }

@@ -3,7 +3,8 @@
     min-height: $nav-height;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: var(--color-page-background) !important;
+    // background-color: var(--color-page-background) !important;
+    background-color: var(--color-page-background);
     border-bottom: 1px solid var(--color-text-lighten);
 
     .navbar-nav {
@@ -27,6 +28,7 @@
         &:focus,
         &:hover {
           color: var(--color-text);
+          // border: 2px dotted var(--color-text)
         }
 
         img {
@@ -88,3 +90,19 @@ _____________________________________*/
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

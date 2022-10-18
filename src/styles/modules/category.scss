@@ -27,14 +27,13 @@
   }
 }
 .list-group-item-action:focus, .list-group-item-action:hover {
-  // color: $color-1-darken
   color: var(--color-text);
   background-color: var(--color-page-backround);
 }
 
 .theme-category__title {
   border-radius: $border-radius-2;
-  margin-bottom: 3rem;
+  margin-bottom: 3.25rem;
   
   @media (max-width: 575px) {
     margin-bottom: .75rem;

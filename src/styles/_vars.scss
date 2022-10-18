@@ -2,18 +2,21 @@ $nav-height: 91px;
 $border-radius-1: 0.25rem;
 $border-radius-2: 1rem;
 
-$color-white: #fff;
+$color-white: #F5F5F5;
 $color-google-red: #ea4335;
 $color-1: #455775;
 $color-1-darken: darken($color-1, 20);
 $color-1-lighten: lighten($color-1, 40);
 
-$color-black: #202124;
+// $color-black: #202124;
+$color-black: #131922;
+
 $color-light-grey: #e8eaed;
 $color-light-grey-darken: darken($color-light-grey, 40);
 
 :root {
-  --color-page-background: #fff;
+  // --color-page-background: #F5F5F5;
+  --color-page-background: #{$color-white};
   --color-text: #{$color-1};
   --color-text-lighten: #{$color-1-lighten};
 }

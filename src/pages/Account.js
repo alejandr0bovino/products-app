@@ -7,7 +7,7 @@ import { ThemeToast } from "../components/ThemeToast";
 
 import { toast } from "react-toastify";
 
-import { FaCheck, FaRegUserCircle } from "react-icons/fa";
+import { FaCheck, FaUserCircle } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 import { MdOutlineNightlight, MdLightMode } from "react-icons/md";
@@ -77,7 +77,7 @@ function Account() {
             </>
           ) : (
             <>
-              <FaRegUserCircle size="8rem" />
+              <FaUserCircle size="8rem" />
             </>
           )}
         </div>
@@ -121,7 +121,7 @@ function Account() {
             </div>
           )}
 
-          <div className="mb-4 pb-3">
+          <div>
             <Button className="btn btn-beta" variant="" onClick={toggleTheme}>
               <DarkMenuIcon size="1.75rem" />
               &nbsp;&nbsp;
@@ -130,6 +130,8 @@ function Account() {
               </strong>
             </Button>
           </div>
+
+          <hr className="mb-4" />
 
           <div className="theme-account__action">
             <button onClick={handleLogout} className="btn btn-gamma btn--flex">
