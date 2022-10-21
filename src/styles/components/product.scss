@@ -103,8 +103,11 @@ ________________________________ */
 }
 .theme-product-item-2__action {
   > .btn {
-    border: 1px solid $color-white;
-    color: $color-white;
+    // border: 1px solid $color-white;
+    // color: $color-white;
+
+    background-color: var(--color-page-background);
+    color: var(--color-text);
     padding: 1rem;
     border-radius: 50%;
   }
