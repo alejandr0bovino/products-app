@@ -25,10 +25,13 @@
           padding: 0;
         }
 
-        &:focus,
-        &:hover {
-          color: var(--color-text);
-          // border: 2px dotted var(--color-text)
+        // &:focus,
+        // &:hover {
+        //   color: var(--color-text);
+        // }
+
+        &:active {
+          border-color: var(--color-text-lighten);
         }
 
         img {

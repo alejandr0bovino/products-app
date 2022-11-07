@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { MenuActive } from "../components/MenuActive"
 import { Helmet } from "react-helmet";
 

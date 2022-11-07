@@ -15,7 +15,7 @@ const OrderItem = ({ product, index }) => {
   return (
     <div className="theme-order-item">
       <div className="theme-order-item__picture">
-        <img src={product.images[0]} />
+        <img src={product.images[0]} alt={product.title} />
       </div>
 
       <div className="theme-order-item__info">

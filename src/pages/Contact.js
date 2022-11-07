@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { MenuActive } from "../components/MenuActive";
 import emailjs from "@emailjs/browser";
 import { BsCheckCircleFill } from "react-icons/bs";

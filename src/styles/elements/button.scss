@@ -87,7 +87,7 @@ ________________________________________________________*/
   border-color: lighten($color-google-red, 5);
   color: $color-white;
 }
-.btn-delta:focus {
+.btn-delta:focus-visible {
   box-shadow: 0 0 0 0.25rem rgba($color-google-red, 0.25);
 }
 .btn-delta--lg {
@@ -95,7 +95,9 @@ ________________________________________________________*/
   padding-bottom: 0.75rem;
   font-size: 1.25rem;
 }
-
+.dark .btn-delta:focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba($color-google-red, 0.45);
+}
 /*
 ________________________________________________________*/
 

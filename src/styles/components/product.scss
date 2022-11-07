@@ -101,15 +101,36 @@ ________________________________ */
     margin-left: 0.25rem;
   }
 }
+// .theme-product-item-2__action {
+//   > .btn {
+//     background-color: var(--color-page-background);
+//     color: var(--color-text);
+//     padding: 1rem;
+//     border-radius: 50%;
+//   }
+//   > .btn:first-child {
+//     margin-right: 1rem;
+//   }
+// }
+
 .theme-product-item-2__action {
   > .btn {
-    border: 1px solid $color-white;
-    color: $color-white;
+    background-color: var(--color-page-background);
+    color: var(--color-text);
     padding: 1rem;
-    border-radius: 50%;
+    border-radius: 0;
+    &:focus {
+      position: relative;
+      z-index: 2
+    }
   }
   > .btn:first-child {
-    margin-right: 1rem;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+  > .btn:last-child {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
   }
 }
 

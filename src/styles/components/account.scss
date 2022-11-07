@@ -18,9 +18,9 @@
   display: flex;
   width: 2rem;
   color: $color-google-red;
+  border-radius: 4px;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: $color-google-red;
   }
 }
