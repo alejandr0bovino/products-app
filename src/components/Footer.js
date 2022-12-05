@@ -29,6 +29,11 @@ function Footer() {
               Contact
             </Link>
           </li>
+          <li>
+            <Link to="/help" className="btn">
+              Help
+            </Link>
+          </li>
         </ul>
 
         <div className="theme-footer__right">

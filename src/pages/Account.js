@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import AppContext from "../context/AppContext";
 
@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 import { FaCheck, FaUserCircle } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
+import { FiHelpCircle } from "react-icons/fi";
 import { BiLogOut } from "react-icons/bi";
 import { MdOutlineNightlight, MdLightMode } from "react-icons/md";
 
@@ -129,6 +130,23 @@ function Account() {
                 {state.darkTheme === "dark" ? "Dark mode" : "Light mode"}
               </strong>
             </Button>
+          </div>
+
+          <hr className="mb-4" />
+
+          <div>
+            <Link to="/help" className="btn btn-beta" variant="">
+              <FiHelpCircle size="1.75rem" />
+              &nbsp;&nbsp;
+              Help
+            </Link>
+            {/* <Link  className="btn btn-beta" variant="" onClick={toggleTheme}>
+              <DarkMenuIcon size="1.75rem" />
+              &nbsp;&nbsp;
+              <strong style={{ verticalAlign: "middle" }}>
+                {state.darkTheme === "dark" ? "Dark mode" : "Light mode"}
+              </strong>
+            </Button> */}
           </div>
 
           <hr className="mb-4" />

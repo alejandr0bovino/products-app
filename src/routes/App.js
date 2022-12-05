@@ -10,6 +10,7 @@ import CategoryProductList from "../components/CategoryProductList";
 import CheckOut from "../pages/CheckOut";
 import CheckOutSuccess from "../pages/CheckOutSuccess";
 import About from "../pages/About";
+import Help from "../pages/Help";
 import NotFound from "../pages/NotFound";
 
 import RestrictedZone from "../pages/RestrictedZone";
@@ -39,6 +40,7 @@ function App() {
               <Route exact path="/signin" element={<Signin />} />
               <Route exact path="/signup" element={<Signup />} />
               <Route exact path="/about" element={<About />} />
+              <Route exact path="/help" element={<Help />} />
 
               <Route
                 exact
