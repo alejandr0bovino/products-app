@@ -174,7 +174,7 @@ function Contact() {
                     ) : (
                       <>
                         <BiMailSend size="1.75rem" />
-                        &nbsp;&nbsp; Send
+                        <span>&nbsp;&nbsp; Send</span>
                       </>
                     )}
                   </button>
