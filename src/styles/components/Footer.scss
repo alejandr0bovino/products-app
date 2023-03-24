@@ -33,6 +33,7 @@
 }
 .theme-footer__left {
   margin-bottom: 0.5rem;
+  line-height: 2;
 }
 .theme-footer__menu {
   margin-bottom: 0.5rem;
@@ -46,8 +47,17 @@
 
 /* 
   _____________________________________*/
+@media (max-width: 991px) {
+  .theme-footer__left {
+    line-height: 2;
 
-@media (min-width: 768px) {
+    svg {
+      position: relative;
+      top: -2px
+    }
+  }
+}
+@media (min-width: 992px) {
   .theme-footer {
     padding: 0;
     ul {
@@ -58,6 +68,10 @@
     margin-bottom: 0;
     display: flex;
     align-items: center;
+
+    br {
+      display: none;
+    }
   }
   .theme-footer__menu {
     margin-bottom: 0;
