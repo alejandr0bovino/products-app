@@ -11,8 +11,10 @@ function Footer() {
         <div className="theme-footer__left">
           <SiReactos size="1.5rem" />
           &nbsp;&nbsp; © 2022 Company, Inc
+          &nbsp;&nbsp;
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;Development: &nbsp;<a className="developemnt-by" href="https://alejandro.uy">alejandro.uy</a>
+          <span>|</span>
+          &nbsp;&nbsp;Development: &nbsp;<a className="developemnt-by" href="https://alejandro.uy">alejandro.uy</a>
         </div>
 
         <ul className="theme-footer__menu">

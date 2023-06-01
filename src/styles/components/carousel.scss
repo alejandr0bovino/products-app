@@ -20,8 +20,16 @@
 .carousel-control-prev:focus,
 .carousel-control-prev:hover {
   opacity: 1;
-  // box-shadow: none;
-  .dark & {
-    // box-shadow: none;
+}
+@media (max-width: 767px) {
+  .carousel-inner,
+  .carousel-item {
+    max-height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .carousel-inner,
+  .carousel-item {
+    max-height: 450px;
   }
 }
