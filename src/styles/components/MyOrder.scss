@@ -13,6 +13,7 @@
 .theme-order-item__picture > img {
   width: 4rem;
   border-radius: $border-radius-1;
+  max-height: 3rem;
 }
 
 .theme-order-item > div:nth-child(1) {
