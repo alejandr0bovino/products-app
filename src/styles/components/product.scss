@@ -17,6 +17,7 @@ ________________________________ */
   span {
     margin-top: 0.25rem;
   }
+
   b {
     font-size: 2rem;
     margin-left: 0.25rem;
@@ -28,9 +29,10 @@ ________________________________ */
 }
 
 .theme-product-detail__action {
-  > div:first-child {
+  >div:first-child {
     margin-bottom: 1rem;
   }
+
   .btn {
     width: 100%;
   }
@@ -93,14 +95,17 @@ ________________________________ */
 .theme-product-item-2__price {
   display: flex;
   align-items: center;
+
   span {
     margin-top: 0.25rem;
   }
+
   b {
     font-size: 2rem;
     margin-left: 0.25rem;
   }
 }
+
 // .theme-product-item-2__action {
 //   > .btn {
 //     background-color: var(--color-page-background);
@@ -114,21 +119,30 @@ ________________________________ */
 // }
 
 .theme-product-item-2__action {
-  > .btn {
+  >.btn {
     background-color: var(--color-page-background);
     color: var(--color-text);
     padding: 1rem;
     border-radius: 0;
+
     &:focus {
       position: relative;
       z-index: 2
     }
+
+    &:active {
+      background-color: var(--color-page-background);
+      color: var(--color-text);
+    }
+
   }
-  > .btn:first-child {
+
+  >.btn:first-child {
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
   }
-  > .btn:last-child {
+
+  >.btn:last-child {
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
   }

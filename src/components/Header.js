@@ -373,7 +373,7 @@ function Header() {
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <MyOrder />
+          <MyOrder onClose={handleCloseCartOffcanvas} />
         </Offcanvas.Body>
       </Navbar.Offcanvas>
     </>

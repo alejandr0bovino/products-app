@@ -1,4 +1,5 @@
 @media (max-width: 767px) {
+
   .g-5,
   .gy-5 {
     --bs-gutter-y: 1.5rem;
@@ -38,6 +39,7 @@ a:focus-visible,
 }
 
 .dark {
+
   a:focus-visible,
   .btn:focus-visible {
     box-shadow: 0 0 0 0.25rem rgba($color-light-grey-darken, 0.5);
@@ -62,30 +64,38 @@ _______________________________________*/
     background-color: #ffc107;
     border-color: #ffc107;
   }
+
   &:active:focus {
     box-shadow: none
   }
+
   &:focus-visible {
     box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
   }
 }
+
 .btn-danger {
+
   &:hover,
   &:focus {
     background-color: #dc3545;
     border-color: #dc3545;
   }
+
   &:active:focus {
     box-shadow: none;
   }
+
   &:focus-visible {
     box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
   }
 }
+
 .dark {
   .btn-warning:focus-visible {
     box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
   }
+
   .btn-danger:focus-visible {
     box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
   }
@@ -114,6 +124,7 @@ _______________________________________________*/
     box-shadow: none;
   }
 }
+
 // .dark .btn-close:focus {
 //   box-shadow: 0 0 0 0.25rem rgba($color-light-grey-darken, 0.25);
 // }
@@ -131,14 +142,17 @@ _______________________________________________*/
 .offcanvas {
   background-color: var(--color-page-background);
 }
+
 .offcanvas-title {
   display: flex;
   align-items: center;
+  color: var(--color-text);
 }
 
 .offcanvas-end {
   border-left: none;
 }
+
 .offcanvas-backdrop,
 .modal-backdrop {
   background-color: lighten($color-1-darken, 5);
@@ -147,10 +161,12 @@ _______________________________________________*/
     background-color: darken($color-black, 5);
   }
 }
+
 .offcanvas-backdrop.show,
 .modal-backdrop.show {
   opacity: 0.85;
 }
+
 .modal-header .btn-close,
 .offcanvas-header .btn-close {
   opacity: 1;
@@ -161,6 +177,7 @@ _______________________________________________*/
 .dark .offcanvas-header .btn-close {
   filter: brightness(0) invert(1);
 }
+
 .dark .modal-header .btn-close {
   filter: brightness(0) invert(1);
 }
@@ -170,22 +187,26 @@ _______________________________________________*/
 
 .alert {
   border-color: transparent;
+
   p {
     font-size: 1.125rem;
     // display: flex;
     // align-items: center;
   }
 }
+
 .alert-secondary a,
 .alert-secondary a:hover {
   color: inherit;
 }
+
 /*
 _______________________________________________*/
 
 .tooltip.show {
   opacity: 1;
 }
+
 .tooltip-inner {
   max-width: 300px;
   background-color: $color-1;
@@ -196,14 +217,17 @@ _______________________________________________*/
 .bs-tooltip-end .tooltip-arrow::before {
   border-right-color: $color-1;
 }
+
 .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before,
 .bs-tooltip-top .tooltip-arrow::before {
   border-top-color: $color-1;
 }
+
 .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before,
 .bs-tooltip-bottom .tooltip-arrow::before {
   border-bottom-color: $color-1;
 }
+
 .bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before,
 .bs-tooltip-start .tooltip-arrow::before {
   border-left-color: $color-1;
@@ -219,14 +243,17 @@ _______________________________________________*/
   .bs-tooltip-end .tooltip-arrow::before {
     border-right-color: $color-white;
   }
+
   .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before,
   .bs-tooltip-top .tooltip-arrow::before {
     border-top-color: $color-white;
   }
+
   .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before,
   .bs-tooltip-bottom .tooltip-arrow::before {
     border-bottom-color: $color-white;
   }
+
   .bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before,
   .bs-tooltip-start .tooltip-arrow::before {
     border-left-color: $color-white;

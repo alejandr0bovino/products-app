@@ -7,7 +7,7 @@ import SumTotalOrder from "../utils/SumTotalOrder";
 import { MdWarningAmber } from "react-icons/md";
 import { HiCurrencyDollar } from "react-icons/hi";
 
-const MyOrder = () => {
+const MyOrder = ({ onClose }) => {
   const { state } = useContext(AppContext);
   const sumTotal = SumTotalOrder(state.cart);
 
@@ -28,10 +28,10 @@ const MyOrder = () => {
               </div>
 
               <div>
-                <p className="mb-0">                  
+                <p className="mb-0">
                   No items in cart
                 </p>
-              </div>              
+              </div>
             </div>
           </>
         )}
@@ -54,7 +54,7 @@ const MyOrder = () => {
               <Link
                 className="btn btn-danger w-100"
                 to="/checkout"
-                onClick={() => document.querySelector(".btn-close").click()}
+                onClick={onClose}
               >
                 <b>CHECKOUT</b>
               </Link>
