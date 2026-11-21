@@ -8,9 +8,11 @@
     border-color: var(--color-text);
     box-shadow: 0 0 0 0.25rem rgba($color-1, 0.25);
   }
+
   .dark &:focus {
     box-shadow: 0 0 0 0.25rem rgba($color-light-grey, 0.25);
   }
+
   .dark &,
   .dark &.is-invalid:not([multiple]):not([size]) {
     background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27gray%27 stroke=%27%gray%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M2 5l6 6 6-6%27/%3e%3c/svg%3e");
@@ -36,7 +38,7 @@ _______________________________________________*/
     box-shadow: 0 0 0 0.25rem rgba($color-1, 0.25);
   }
 
-  &.is-invalid + label {
+  &.is-invalid+label {
     color: #dc3545;
   }
 }
@@ -46,7 +48,9 @@ _______________________________________________*/
     box-shadow: 0 0 0 0.25rem rgba($color-light-grey, 0.25);
   }
 }
+
 .dark {
+
   .form-select.is-invalid:focus,
   .form-control.is-invalid:focus,
   .was-validated .form-control:invalid:focus {
@@ -58,16 +62,56 @@ _______________________________________________*/
   opacity: 0.5;
   background-color: transparent;
 
-  + label {
+  +label {
     opacity: 0.5;
   }
 }
 
 .dark {
-  .form-floating > .form-control:-webkit-autofill ~ label {
+  .form-floating>.form-control:-webkit-autofill~label {
     color: var(--color-text-lighten);
   }
-  .form-floating > .form-control:disabled:-webkit-autofill ~ label {
+
+  .form-floating>.form-control:disabled:-webkit-autofill~label {
     color: var(--color-text);
   }
+}
+
+
+
+
+
+
+
+
+.form-floating>.form-control:focus~label {
+  color: var(--color-text);
+}
+
+.form-floating>.form-control:focus~label::after {
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+}
+
+// .dark {
+//   .form-floating > .form-control:focus ~ label::after {
+//     background-color: var(--color-page-background);
+//   }
+// }
+
+.form-floating>.form-control-plaintext~label,
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+  color: var(--color-text);
+}
+
+
+
+.form-floating>.form-control-plaintext~label::after,
+.form-floating>.form-control:focus~label::after,
+.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating>.form-select~label::after {
+  color: var(--color-text);
+  background-color: var(--color-page-background);
 }

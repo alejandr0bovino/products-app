@@ -25,7 +25,7 @@ function CategoriesList() {
       <div className="row theme-category-list">
         <div className="col-md-6">
           <div className="theme-category-list__group theme-category-list__group--1 list-group">
-            {data.loaded && (
+            {data.loaded && Array.isArray(data.products) && (
               <>
                 <Link
                   to={`/category/${data.products[0].id}`}
@@ -81,7 +81,7 @@ function CategoriesList() {
 
         <div className="col-md-6">
           <div className="theme-category-list__group theme-category-list__group--2 list-group w-auto">
-            {data.loaded && (
+            {data.loaded && Array.isArray(data.products) && (
               <>
                 <Link
                   to={`/category/${data.products[3].id}`}

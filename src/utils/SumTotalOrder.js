@@ -1,7 +1,10 @@
 const SumTotalOrder = (cart) => {
-  const reducer = (accumulator, currentValue) => accumulator + currentValue.price
-  const sum  = cart.reduce(reducer, 0)
-  return sum
-}
+  const sum = cart.reduce(
+    (accumulator, currentValue) => accumulator + Number(currentValue.price || 0),
+    0
+  );
+
+  return sum.toFixed(2);
+};
 
 export default SumTotalOrder

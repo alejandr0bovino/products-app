@@ -18,6 +18,7 @@ function Search(props) {
 
   const filteredProducts =
     data.loaded &&
+    data.products &&
     data.products.filter((product) => {
       return product.title.toLowerCase().includes(search.toLowerCase());
     });
@@ -60,13 +61,13 @@ function Search(props) {
       >
         {search !== "" && filteredProducts
           ? filteredProducts.map((item) => (
-              <div key={item.id}>
-                <Link to={`/product/${item.id}`} reloadDocument={true}>
-                  <h5>{item.title}</h5>
-                  <p>{item.description}</p>
-                </Link>
-              </div>
-            ))
+            <div key={item.id}>
+              <Link to={`/product/${item.id}`} reloadDocument={true}>
+                <h5>{item.title}</h5>
+                <p>{item.description}</p>
+              </Link>
+            </div>
+          ))
           : ""}
       </Modal.Body>
     </Modal>

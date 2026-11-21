@@ -51,6 +51,9 @@ const CategoryProductList = () => {
               </div>
 
               {dataProducts.loaded ? (
+                dataProducts.error || !Array.isArray(dataProducts.products) ? (
+                  <h2 className="theme-main-title">Couldn't load products</h2>
+                ) : (
                 <div className="row gy-5 theme-products-list">
                   {dataProducts.products.slice(0, load).map((product) => (
                     <div key={product.id} className="col-lg-6 col-xl-4">
@@ -69,6 +72,7 @@ const CategoryProductList = () => {
                     </div>
                   )}
                 </div>
+                )
               ) : (
                 ""
               )}

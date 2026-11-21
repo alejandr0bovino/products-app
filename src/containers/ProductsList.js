@@ -28,6 +28,9 @@ function ProductsList() {
       </Helmet>
 
       {data.loaded ? (
+        data.error || !Array.isArray(data.products) ? (
+          <h2 className="theme-main-title">Couldn't load products</h2>
+        ) : (
         <>
           <div className="row gy-5 theme-products-list">
             {data.products.slice(0, load).map((item) => (
@@ -49,6 +52,7 @@ function ProductsList() {
             )}
           </div>
         </>
+        )
       ) : (
         <Loading />
       )}

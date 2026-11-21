@@ -21,6 +21,7 @@
         &.btn-lambda {
           padding: 0;
         }
+
         &.btn-lambda.active {
           padding: 0;
         }
@@ -43,9 +44,10 @@
 
   .navbar-nav {
     .active-item .nav-link {
-      border-color: var(--color-text-lighten);
+      border: 1px solid var(--color-text-lighten);
     }
   }
+
   .navbar-right {
     .nav-link {
       img {
@@ -56,6 +58,7 @@
         border-width: 1px;
         border-style: solid;
       }
+
       .badge {
         font-size: 0.825em;
         top: 0;
@@ -79,6 +82,7 @@ _____________________________________*/
     }
   }
 }
+
 @media (min-width: 1200px) {
   .theme-header {
     .navbar-right {
@@ -86,6 +90,7 @@ _____________________________________*/
         svg {
           margin-right: 0.5rem;
         }
+
         img {
           margin-right: 0.5rem;
         }
@@ -93,19 +98,3 @@ _____________________________________*/
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
