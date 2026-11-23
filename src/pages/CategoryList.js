@@ -1,17 +1,59 @@
 import React, { useEffect } from "react";
 import useGetDataFromApi from "../hooks/useGetDataFromApi";
 import { Link } from "react-router-dom";
-import { API } from "../constants/constants";
+import { API, FEATURED_CATEGORY_LIMITS } from "../constants/constants";
 import { Loading } from "./../components/Loading";
 import { MenuActive } from "../components/MenuActive";
 import { Helmet } from "react-helmet";
 
+const FEATURED_CATEGORIES = FEATURED_CATEGORY_LIMITS.map(({ slug }) => slug);
+
+const categoryKey = (value) =>
+  String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_]+/g, "-");
+
+function CategoryLink({ category }) {
+  return (
+    <Link
+      to={`/category/${category.id}`}
+      className="list-group-item list-group-item-action d-flex gap-3 py-3"
+    >
+      <img
+        src={category.image}
+        alt={category.name}
+        width="64"
+        height="64"
+        className="rounded-circle flex-shrink-0"
+      />
+      <div className="d-flex gap-2 w-100 justify-content-between">
+        <h5 className="mb-0">{category.name}</h5>
+      </div>
+    </Link>
+  );
+}
+
 function CategoriesList() {
-  const data = useGetDataFromApi(`${API}/categories?limit=5&offset=0`);
+  const data = useGetDataFromApi(`${API}/categories`);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
+
+  const categories =
+    data.loaded && Array.isArray(data.products)
+      ? FEATURED_CATEGORIES.map((key) =>
+          data.products.find(
+            (category) =>
+              categoryKey(category.id) === key ||
+              categoryKey(category.name) === key
+          )
+        ).filter(Boolean)
+      : [];
+
+  const midpoint = Math.ceil(categories.length / 2);
+  const columns = [categories.slice(0, midpoint), categories.slice(midpoint)];
 
   return (
     <>
@@ -23,100 +65,19 @@ function CategoriesList() {
       {!data.loaded && <Loading />}
 
       <div className="row theme-category-list">
-        <div className="col-md-6">
-          <div className="theme-category-list__group theme-category-list__group--1 list-group">
-            {data.loaded && Array.isArray(data.products) && (
-              <>
-                <Link
-                  to={`/category/${data.products[0].id}`}
-                  className="list-group-item list-group-item-action d-flex gap-3 py-3"
-                >
-                  <img
-                    src={data.products[0].image}
-                    alt={data.products[0].name}
-                    width="64"
-                    height="64"
-                    className="rounded-circle flex-shrink-0"
-                  />
-                  <div className="d-flex gap-2 w-100 justify-content-between">
-                    <h5 className="mb-0">{data.products[0].name}</h5>
-                  </div>
-                </Link>
-
-                <Link
-                  to={`/category/${data.products[1].id}`}
-                  className="list-group-item list-group-item-action d-flex gap-3 py-3"
-                >
-                  <img
-                    src={data.products[1].image}
-                    alt={data.products[1].name}
-                    width="64"
-                    height="64"
-                    className="rounded-circle flex-shrink-0"
-                  />
-                  <div className="d-flex gap-2 w-100 justify-content-between">
-                    <h5 className="mb-0">{data.products[1].name}</h5>
-                  </div>
-                </Link>
-
-                <Link
-                  to={`/category/${data.products[2].id}`}
-                  className="list-group-item list-group-item-action d-flex gap-3 py-3"
-                >
-                  <img
-                    src={data.products[2].image}
-                    alt={data.products[2].name}
-                    width="64"
-                    height="64"
-                    className="rounded-circle flex-shrink-0"
-                  />
-                  <div className="d-flex gap-2 w-100 justify-content-between">
-                    <h5 className="mb-0">{data.products[2].name}</h5>
-                  </div>
-                </Link>
-              </>
-            )}
+        {columns.map((column, columnIndex) => (
+          <div className="col-md-6" key={columnIndex}>
+            <div
+              className={`theme-category-list__group theme-category-list__group--${
+                columnIndex + 1
+              } list-group${columnIndex === 1 ? " w-auto" : ""}`}
+            >
+              {column.map((category) => (
+                <CategoryLink key={category.id} category={category} />
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="col-md-6">
-          <div className="theme-category-list__group theme-category-list__group--2 list-group w-auto">
-            {data.loaded && Array.isArray(data.products) && (
-              <>
-                <Link
-                  to={`/category/${data.products[3].id}`}
-                  className="list-group-item list-group-item-action d-flex gap-3 py-3"
-                >
-                  <img
-                    src={data.products[3].image}
-                    alt={data.products[3].name}
-                    width="64"
-                    height="64"
-                    className="rounded-circle flex-shrink-0"
-                  />
-                  <div className="d-flex gap-2 w-100 justify-content-between">
-                    <h5 className="mb-0">{data.products[3].name}</h5>
-                  </div>
-                </Link>
-                <Link
-                  to={`/category/${data.products[4].id}`}
-                  className="list-group-item list-group-item-action d-flex gap-3 py-3"
-                >
-                  <img
-                    src={data.products[4].image}
-                    alt={data.products[4].name}
-                    width="64"
-                    height="64"
-                    className="rounded-circle flex-shrink-0"
-                  />
-                  <div className="d-flex gap-2 w-100 justify-content-between">
-                    <h5 className="mb-0">{data.products[4].name}</h5>
-                  </div>
-                </Link>
-              </>
-            )}
-          </div>
-        </div>
+        ))}
       </div>
     </>
   );

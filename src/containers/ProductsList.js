@@ -7,17 +7,20 @@ import { Loading } from "../components/Loading";
 import { MdExpandMore } from "react-icons/md";
 import { Helmet } from "react-helmet";
 
+const PAGE_SIZE = 9;
+const PRODUCT_TOTAL = 36;
+
 function ProductsList() {
-  const data = useGetDataFromApi(`${API}/products?limit=48&offset=0`);
+  const data = useGetDataFromApi(`${API}/products?selection=featured`);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
-  const [load, setLoad] = useState(9);
+  const [load, setLoad] = useState(PAGE_SIZE);
 
   const loadData = () => {
-    setLoad((prev) => prev + 9);
+    setLoad((prev) => Math.min(prev + PAGE_SIZE, PRODUCT_TOTAL));
   };
 
   return (
@@ -39,7 +42,7 @@ function ProductsList() {
               </div>
             ))}
 
-            {load < 36 && (
+            {load < PRODUCT_TOTAL && load < data.products.length && (
               <div className="theme-products-list__load-more">
                 <button
                   onClick={loadData}

@@ -8,20 +8,24 @@ import { MenuActive } from "../components/MenuActive";
 import { MdExpandMore } from "react-icons/md";
 import { Helmet } from "react-helmet";
 
+const PAGE_SIZE = 9;
+const PRODUCT_TOTAL = 36;
+
 const CategoryProductList = () => {
   const { id } = useParams();
   const data = useGetDataFromApi(`${API}/categories/${id}`);
   const dataProducts = useGetDataFromApi(
-    `${API}/categories/${id}/products?limit=36&offset=0`
+    `${API}/categories/${id}/products?limit=${PRODUCT_TOTAL}&offset=0`
   );
-  const [load, setLoad] = useState(9);
+  const [load, setLoad] = useState(PAGE_SIZE);
   const loadData = () => {
-    setLoad((prev) => prev + 9);
+    setLoad((prev) => Math.min(prev + PAGE_SIZE, PRODUCT_TOTAL));
   };
 
   useEffect(() => {
+    setLoad(PAGE_SIZE);
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, []);
+  }, [id]);
 
   return (
     <div>
@@ -60,7 +64,8 @@ const CategoryProductList = () => {
                       <ProductItem product={product} categoryProduct={true} />
                     </div>
                   ))}
-                  {load < 36 && (
+                  {load < PRODUCT_TOTAL &&
+                    load < dataProducts.products.length && (
                     <div className="theme-products-list__load-more">
                       <button
                         onClick={loadData}

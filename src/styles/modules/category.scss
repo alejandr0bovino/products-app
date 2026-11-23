@@ -31,6 +31,14 @@
   background-color: var(--color-page-backround);
 }
 
+.theme-products-category + .theme-products-category {
+  margin-top: 3.25rem;
+
+  @media (max-width: 575px) {
+    margin-top: 2rem;
+  }
+}
+
 .theme-category__title {
   border-radius: $border-radius-2;
   margin-bottom: 3.25rem;
@@ -52,7 +60,7 @@
 
 @media (max-width: 767px) {
   .theme-category-list__group--1 {
-    > a:nth-child(3) {
+    > a:last-child {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       border-bottom: none;

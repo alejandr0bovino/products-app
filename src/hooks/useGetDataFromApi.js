@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FEATURED_CATEGORY_LIMITS } from "../constants/constants";
+import { coverForCategory, photosForProduct } from "../utils/catalogPhotos";
 
 const PLATZI_API = "https://api.escuelajs.co/api/v1";
 const CATALOG_API = "https://dummyjson.com";
@@ -24,36 +26,56 @@ const getCategoryNames = () => {
   return categoryNamesPromise;
 };
 
-const productImages = (product) => {
-  const images = Array.isArray(product.images)
-    ? product.images.filter(Boolean)
-    : [];
-
-  if (product.thumbnail && !images.includes(product.thumbnail)) {
-    images.push(product.thumbnail);
-  }
-
-  const fallback = images[0];
-  while (fallback && images.length < 3) {
-    images.push(fallback);
-  }
-
-  return images;
-};
-
 const toCatalogProduct = (product, categoryNames) => {
   const slug =
     typeof product.category === "string" ? product.category : product.category?.id;
+  const images = photosForProduct(product);
 
   return {
     ...product,
-    images: productImages(product),
+    images,
+    thumbnail: images[0],
     category: {
       id: slug,
       name: categoryNames[slug] || slug,
-      image: product.thumbnail || product.images?.[0] || "",
+      image: coverForCategory(slug),
     },
   };
+};
+
+const interleaveProducts = (lists) => {
+  const mixed = [];
+  const longest = lists.reduce(
+    (count, list) => Math.max(count, list.length),
+    0
+  );
+
+  for (let index = 0; index < longest; index += 1) {
+    lists.forEach((list) => {
+      if (list[index]) {
+        mixed.push(list[index]);
+      }
+    });
+  }
+
+  return mixed;
+};
+
+const fetchFeaturedProducts = async (categoryNames) => {
+  const lists = await Promise.all(
+    FEATURED_CATEGORY_LIMITS.map(async ({ slug, limit }) => {
+      const response = await axios.get(
+        `${CATALOG_API}/products/category/${slug}`,
+        { params: { limit } }
+      );
+
+      return response.data.products
+        .slice(0, limit)
+        .map((product) => toCatalogProduct(product, categoryNames));
+    })
+  );
+
+  return interleaveProducts(lists);
 };
 
 const fetchCatalog = async (url) => {
@@ -62,6 +84,10 @@ const fetchCatalog = async (url) => {
   const limit = Number(requested.searchParams.get("limit") || 0);
   const offset = Number(requested.searchParams.get("offset") || 0);
   const categoryNames = await getCategoryNames();
+
+  if (path === "/products" && requested.searchParams.get("selection") === "featured") {
+    return fetchFeaturedProducts(categoryNames);
+  }
 
   if (path === "/products") {
     const response = await axios.get(`${CATALOG_API}/products`, {
@@ -82,23 +108,12 @@ const fetchCatalog = async (url) => {
   }
 
   if (path === "/categories") {
-    const [categories, products] = await Promise.all([
-      axios.get(`${CATALOG_API}/products/categories`),
-      axios.get(`${CATALOG_API}/products`, { params: { limit: 0 } }),
-    ]);
-    const imageBySlug = {};
-
-    products.data.products.forEach((product) => {
-      if (!imageBySlug[product.category]) {
-        imageBySlug[product.category] =
-          product.thumbnail || product.images?.[0] || "";
-      }
-    });
+    const categories = await axios.get(`${CATALOG_API}/products/categories`);
 
     const list = categories.data.map((category) => ({
       id: category.slug,
       name: category.name,
-      image: imageBySlug[category.slug] || "",
+      image: coverForCategory(category.slug),
     }));
 
     return limit ? list.slice(offset, offset + limit) : list;
@@ -107,24 +122,17 @@ const fetchCatalog = async (url) => {
   const categoryMatch = path.match(/^\/categories\/([^/]+)$/);
   if (categoryMatch) {
     const slug = decodeURIComponent(categoryMatch[1]);
-    const [categories, products] = await Promise.all([
-      axios.get(`${CATALOG_API}/products/categories`),
-      axios.get(`${CATALOG_API}/products/category/${slug}`, {
-        params: { limit: 1 },
-      }),
-    ]);
+    const categories = await axios.get(`${CATALOG_API}/products/categories`);
     const category = categories.data.find((item) => item.slug === slug);
 
     if (!category) {
       throw new Error("Category not found");
     }
 
-    const sample = products.data.products?.[0];
-
     return {
       id: category.slug,
       name: category.name,
-      image: sample?.thumbnail || sample?.images?.[0] || "",
+      image: coverForCategory(category.slug),
     };
   }
 

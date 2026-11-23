@@ -10,7 +10,7 @@ function Footer() {
       <div className="theme-footer__inner container">
         <div className="theme-footer__left">
           <SiReactos size="1.5rem" />
-          &nbsp;&nbsp; © 2022 Company, Inc
+          &nbsp;&nbsp; © {new Date().getFullYear()} Company, Inc
           &nbsp;&nbsp;
           <br />
           <span>|</span>
