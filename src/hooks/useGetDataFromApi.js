@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { FEATURED_CATEGORY_LIMITS } from "../constants/constants";
 import { coverForCategory, photosForProduct } from "../utils/catalogPhotos";
+import formatPrice from "../utils/formatPrice";
 
 const PLATZI_API = "https://api.escuelajs.co/api/v1";
 const CATALOG_API = "https://dummyjson.com";
@@ -33,6 +34,7 @@ const toCatalogProduct = (product, categoryNames) => {
 
   return {
     ...product,
+    price: formatPrice(product.price),
     images,
     thumbnail: images[0],
     category: {

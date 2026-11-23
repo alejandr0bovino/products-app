@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import useGetDataFromApi from "../hooks/useGetDataFromApi";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { API } from "../constants/constants";
+import formatPrice from "../utils/formatPrice";
 import { Loading } from "./../components/Loading";
 import AppContext from "../context/AppContext";
 
@@ -142,7 +143,7 @@ function ProductDetail() {
                     <span>
                       <HiCurrencyDollar size="2.25rem" />
                     </span>
-                    <b>{data.products.price}</b>
+                    <b>{formatPrice(data.products.price)}</b>
                   </div>
                 </div>
 

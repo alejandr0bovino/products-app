@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useLocation, Navigate } from "react-router-dom";
 import AppContext from "../context/AppContext";
 import SumTotalOrder from "../utils/SumTotalOrder";
+import formatPrice from "../utils/formatPrice";
 import { MenuActive } from "../components/MenuActive";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { BsCheckCircleFill } from "react-icons/bs";
@@ -84,7 +85,7 @@ function CheckOutSuccess() {
                       <div>
                         <h6 className="my-0">{item.title}</h6>
                       </div>
-                      <span>$ {item.price}</span>
+                      <span>$ {formatPrice(item.price)}</span>
                     </li>
                   ))}
 

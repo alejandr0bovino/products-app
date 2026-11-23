@@ -4,6 +4,7 @@ import AppContext from "../context/AppContext";
 
 import Form from "react-bootstrap/Form";
 import SumTotalOrder from "../utils/SumTotalOrder";
+import formatPrice from "../utils/formatPrice";
 import Badge from "react-bootstrap/Badge";
 import { MenuActive } from "../components/MenuActive";
 import { useForm } from "react-hook-form";
@@ -70,7 +71,7 @@ function CheckOut() {
                     <div>
                       <h6 className="my-0">{item.title}</h6>
                     </div>
-                    <span>$ {item.price}</span>
+                    <span>$ {formatPrice(item.price)}</span>
                   </li>
                 ))}
 

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AppContext from "../context/AppContext";
+import formatPrice from "../utils/formatPrice";
 
 import { IoMdCloseCircle } from "react-icons/io";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -24,7 +25,7 @@ const OrderItem = ({ product, index }) => {
 
       <div className="theme-order-item__price">
         $ &nbsp;
-        <span>{product.price}</span>
+        <span>{formatPrice(product.price)}</span>
       </div>
 
       <div className="theme-order-item__close">

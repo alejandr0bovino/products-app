@@ -8,6 +8,7 @@ import { HiCurrencyDollar } from "react-icons/hi";
 import { FaCheck } from "react-icons/fa";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import formatPrice from "../utils/formatPrice";
 import AppContext from "../context/AppContext";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -86,7 +87,7 @@ function ProductItem({ product, categoryProduct }) {
                 <span>
                   <HiCurrencyDollar size="2.25rem" />
                 </span>
-                <b>{product.price}</b>
+                <b>{formatPrice(product.price)}</b>
               </div>
 
               <div className="theme-product-item-2__action">
