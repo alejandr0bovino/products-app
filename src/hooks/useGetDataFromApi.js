@@ -63,6 +63,12 @@ const interleaveProducts = (lists) => {
   return mixed;
 };
 
+// The MacBook title wraps to 4 lines in the product card. Swap it for a
+// mobile-accessories product whose title stays on 3 lines.
+const FEATURED_REPLACEMENTS = {
+  78: 107,
+};
+
 const fetchFeaturedProducts = async (categoryNames) => {
   const lists = await Promise.all(
     FEATURED_CATEGORY_LIMITS.map(async ({ slug, limit }) => {
@@ -77,7 +83,24 @@ const fetchFeaturedProducts = async (categoryNames) => {
     })
   );
 
-  return interleaveProducts(lists);
+  const products = interleaveProducts(lists);
+
+  await Promise.all(
+    Object.entries(FEATURED_REPLACEMENTS).map(async ([fromId, toId]) => {
+      const index = products.findIndex(
+        (product) => product.id === Number(fromId)
+      );
+
+      if (index === -1) {
+        return;
+      }
+
+      const response = await axios.get(`${CATALOG_API}/products/${toId}`);
+      products[index] = toCatalogProduct(response.data, categoryNames);
+    })
+  );
+
+  return products;
 };
 
 const fetchCatalog = async (url) => {
