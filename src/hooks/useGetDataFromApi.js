@@ -63,10 +63,10 @@ const interleaveProducts = (lists) => {
   return mixed;
 };
 
-// The MacBook title wraps to 4 lines in the product card. Swap it for a
-// mobile-accessories product whose title stays on 3 lines.
+// The MacBook title wraps to 4 lines in the product card. That slot shows
+// product 125 instead of 107.
 const FEATURED_REPLACEMENTS = {
-  78: 107,
+  78: 125,
 };
 
 const fetchFeaturedProducts = async (categoryNames) => {
